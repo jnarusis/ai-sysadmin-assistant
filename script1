@@ -1,0 +1,17 @@
+```bash
+#!/bin/bash
+
+# Display Hostname
+echo "Hostname: $(hostname)"
+
+# Display Uptime
+echo "Uptime: $(uptime -p)"
+
+# Display Disk Usage
+echo "Disk Usage:"
+df -h | awk 'NR==1 || /^\/dev\// {print $0}'
+
+# Display Memory Stats
+echo "Memory Stats:"
+free -h | awk 'NR==1 || /^Mem/ {print $0}'
+```
